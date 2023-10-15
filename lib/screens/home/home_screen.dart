@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app_ui/data/mock_data.dart';
 import 'package:plant_app_ui/screens/home/widgets/custom_plant_item_widget.dart';
 import 'package:plant_app_ui/utils/app_colors.dart';
-import 'package:plant_app_ui/utils/app_images.dart';
+import 'package:plant_app_ui/utils/k_images.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -71,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Expanded(
       child: ListView(
         padding: EdgeInsets.zero,
-        children: const [
+        children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -79,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         "Found\n10 Results",
@@ -91,19 +92,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     CustomPlantItemWidget(
-                      image: AppImages.p1,
-                      price: 12.99,
-                      name: "Lucky Jade Plant",
+                      plant: plants[0],
                     ),
                     CustomPlantItemWidget(
-                      image: AppImages.p2,
-                      price: 12.99,
-                      name: "New Plant",
+                      plant: plants[1],
                     ),
                     CustomPlantItemWidget(
-                      image: AppImages.p1,
-                      price: 12.99,
-                      name: "Peperomia Plant",
+                      plant: plants[2],
                     ),
                   ],
                 ),
@@ -113,19 +108,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     CustomPlantItemWidget(
-                      image: AppImages.p3,
-                      price: 12.99,
-                      name: "Snake Plant",
+                      plant: plants[3],
                     ),
                     CustomPlantItemWidget(
-                      image: AppImages.p1,
-                      price: 12.99,
-                      name: "Peperomia Plant",
+                      plant: plants[4],
                     ),
                     CustomPlantItemWidget(
-                      image: AppImages.p3,
-                      price: 12.99,
-                      name: "Snake Plant",
+                      plant: plants[5],
                     ),
                   ],
                 ),

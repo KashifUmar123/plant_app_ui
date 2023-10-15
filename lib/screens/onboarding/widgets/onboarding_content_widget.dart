@@ -59,9 +59,6 @@ class OnboardingContentWidget extends StatelessWidget {
             ),
           ),
         ),
-        // SizedBox(
-        //   height: context.height * 0.05,
-        // ),
       ],
     );
   }

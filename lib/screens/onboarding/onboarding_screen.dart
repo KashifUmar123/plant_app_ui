@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:plant_app_ui/data/mock_data.dart';
 import 'package:plant_app_ui/models/onboarding_model.dart';
 import 'package:plant_app_ui/screens/home/home_screen.dart';
 import 'package:plant_app_ui/screens/onboarding/widgets/onboarding_content_widget.dart';
 import 'package:plant_app_ui/utils/app_colors.dart';
-import 'package:plant_app_ui/utils/app_images.dart';
+import 'package:plant_app_ui/utils/k_images.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -16,80 +17,6 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   // onboarding data list
-  List<OnboardingModel> data = [
-    OnboardingModel(
-      title: RichText(
-        text: const TextSpan(
-          children: [
-            TextSpan(
-              text: "Enjoy your \nlife with ",
-              style: TextStyle(
-                color: blackColor,
-                fontSize: 30,
-              ),
-            ),
-            TextSpan(
-              text: "Plants",
-              style: TextStyle(
-                color: blackColor,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-      ),
-      image: AppImages.p1,
-    ),
-    OnboardingModel(
-      title: RichText(
-        text: const TextSpan(
-          children: [
-            TextSpan(
-              text: "Enjoy your \nlife with ",
-              style: TextStyle(
-                color: blackColor,
-                fontSize: 30,
-              ),
-            ),
-            TextSpan(
-              text: "Lucky Jade",
-              style: TextStyle(
-                color: blackColor,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-      ),
-      image: AppImages.p2,
-    ),
-    OnboardingModel(
-      title: RichText(
-        text: const TextSpan(
-          children: [
-            TextSpan(
-              text: "Enjoy your \nlife with ",
-              style: TextStyle(
-                color: blackColor,
-                fontSize: 30,
-              ),
-            ),
-            TextSpan(
-              text: "Cactus",
-              style: TextStyle(
-                color: blackColor,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-      ),
-      image: AppImages.p3,
-    ),
-  ];
 
   // to track current index of the content
   int currentIndex = 0;
@@ -136,12 +63,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                   ),
                   OnboardingContentWidget(
-                    onboardingModel: data[currentIndex],
+                    onboardingModel: onboardingData[currentIndex],
                     currentIndex: currentIndex,
                     showData: showData,
                   ),
-                  // _buildContent(),
-                  // _buildPage(),
                 ],
               ),
               Positioned(
