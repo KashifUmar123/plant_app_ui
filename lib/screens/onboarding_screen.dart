@@ -123,6 +123,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         "Skip",
                         style: TextStyle(
                           color: oliveColor,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
