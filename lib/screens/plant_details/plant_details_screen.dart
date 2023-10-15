@@ -35,7 +35,7 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
           children: [
             Expanded(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: context.width * 0.08),
+                padding: EdgeInsets.symmetric(horizontal: context.width * 0.06),
                 child: Column(
                   children: [
                     SizedBox(
@@ -53,23 +53,7 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
                             width: double.infinity,
                             fit: BoxFit.fitHeight,
                           ),
-                          Positioned(
-                            bottom: 25,
-                            right: context.width * 0.05,
-                            child: Transform.rotate(
-                              angle: 1.5708,
-                              child: DotsIndicator(
-                                dotsCount: 3,
-                                position: 0,
-                                decorator: DotsDecorator(
-                                  color: greyColor,
-                                  activeColor: darkGreenColor,
-                                  activeSize: const Size(25.0, 9.0),
-                                  activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-                                ),
-                              ),
-                            ),
-                          ),
+                          _buildDotsIndicator(context),
                         ],
                       ),
                     ),
@@ -96,100 +80,124 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
                 ),
               ),
             ),
-            Container(
-              height: context.height * 0.25,
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(
-                horizontal: context.width * 0.08,
-                vertical: context.height * 0.025,
-              ),
-              decoration: const BoxDecoration(
-                color: greenColor,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(45.0),
-                  topRight: Radius.circular(45.0),
-                ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      PlantItemDetailsSpecificWidget(
-                        itemSpecifics: "30cm - 40cm",
-                        itemName: "Height",
-                        icon: AppIcons.height,
-                      ),
-                      PlantItemDetailsSpecificWidget(
-                        itemSpecifics: "20ºC - 25ºC",
-                        itemName: "Temprature",
-                        icon: AppIcons.temprature,
-                      ),
-                      PlantItemDetailsSpecificWidget(
-                        itemSpecifics: "Ciramic Pot",
-                        itemName: "Pot",
-                        icon: AppIcons.pot,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "Total Price",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: whiteColor,
-                            ),
-                          ),
-                          SizedBox(
-                            height: context.height * 0.005,
-                          ),
-                          Text(
-                            "\$${widget.plant.price}",
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: whiteColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        height: context.height * 0.08,
-                        width: context.width * 0.5,
-                        decoration: BoxDecoration(
-                          color: oliveColor.withOpacity(.2),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Add to Cart",
-                            style: TextStyle(
-                              color: whiteColor,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            _buildLowerPlantDetailWidget(context),
           ],
         ),
       ),
     );
   }
 
-  _buildLocalHeader() {
+  Positioned _buildDotsIndicator(BuildContext context) {
+    return Positioned(
+      bottom: 25,
+      right: context.width * 0.05,
+      child: Transform.rotate(
+        angle: 1.5708,
+        child: DotsIndicator(
+          dotsCount: 3,
+          position: 0,
+          decorator: DotsDecorator(
+            color: greyColor,
+            activeColor: darkGreenColor,
+            activeSize: const Size(25.0, 9.0),
+            activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container _buildLowerPlantDetailWidget(BuildContext context) {
+    return Container(
+      height: context.height * 0.25,
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(
+        horizontal: context.width * 0.06,
+        vertical: context.height * 0.025,
+      ),
+      decoration: const BoxDecoration(
+        color: greenColor,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(45.0),
+          topRight: Radius.circular(45.0),
+        ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              PlantItemDetailsSpecificWidget(
+                itemSpecifics: "30cm - 40cm",
+                itemName: "Height",
+                icon: AppIcons.height,
+              ),
+              PlantItemDetailsSpecificWidget(
+                itemSpecifics: "20ºC - 25ºC",
+                itemName: "Temprature",
+                icon: AppIcons.temprature,
+              ),
+              PlantItemDetailsSpecificWidget(
+                itemSpecifics: "Ciramic Pot",
+                itemName: "Pot",
+                icon: AppIcons.pot,
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Total Price",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: whiteColor,
+                    ),
+                  ),
+                  SizedBox(
+                    height: context.height * 0.005,
+                  ),
+                  Text(
+                    "\$${widget.plant.price}",
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: whiteColor,
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                height: context.height * 0.08,
+                width: context.width * 0.5,
+                decoration: BoxDecoration(
+                  color: oliveColor.withOpacity(.2),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Add to Cart",
+                    style: TextStyle(
+                      color: whiteColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLocalHeader() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

@@ -29,7 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: whiteColor.withOpacity(.9),
       body: SingleChildScrollView(
         child: Container(
           height: context.height,
@@ -44,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: context.width * 0.05),
+            padding: EdgeInsets.symmetric(horizontal: context.width * 0.06),
             child: Column(
               children: [
                 SizedBox(
@@ -132,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Container(
           height: context.height * 0.06,
-          width: context.width * .75,
+          width: context.width * .72,
           padding: EdgeInsets.symmetric(horizontal: context.width * 0.03),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),

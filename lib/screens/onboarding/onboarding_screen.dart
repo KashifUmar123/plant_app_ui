@@ -39,7 +39,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: context.width * 0.05),
+          padding: EdgeInsets.symmetric(horizontal: context.width * 0.06),
           child: Stack(
             children: [
               Column(

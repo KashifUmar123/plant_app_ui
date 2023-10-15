@@ -20,7 +20,7 @@ class CustomPlantItemWidget extends StatelessWidget {
       onTap: () => _navigateToDetailsScreen(context),
       child: Container(
         height: context.height * 0.33,
-        width: context.width * 0.425,
+        width: context.width * 0.415,
         margin: EdgeInsets.symmetric(vertical: context.height * 0.01),
         padding: EdgeInsets.symmetric(
           horizontal: context.width * 0.04,
