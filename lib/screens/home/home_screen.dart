@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:plant_app_ui/data/mock_data.dart';
 import 'package:plant_app_ui/screens/home/widgets/custom_plant_item_widget.dart';
 import 'package:plant_app_ui/utils/app_colors.dart';
-import 'package:plant_app_ui/utils/k_images.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
 
 class HomeScreen extends StatefulWidget {

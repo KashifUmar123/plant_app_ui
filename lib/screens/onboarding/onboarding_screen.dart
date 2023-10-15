@@ -1,11 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:plant_app_ui/data/mock_data.dart';
-import 'package:plant_app_ui/models/onboarding_model.dart';
 import 'package:plant_app_ui/screens/home/home_screen.dart';
 import 'package:plant_app_ui/screens/onboarding/widgets/onboarding_content_widget.dart';
 import 'package:plant_app_ui/utils/app_colors.dart';
-import 'package:plant_app_ui/utils/k_images.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
 
 class OnboardingScreen extends StatefulWidget {

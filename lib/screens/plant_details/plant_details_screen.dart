@@ -1,11 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:plant_app_ui/data/mock_data.dart';
 import 'package:plant_app_ui/models/plant_item_model.dart';
+import 'package:plant_app_ui/screens/plant_details/widgets/plant_item_details_widget.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
 import 'package:plant_app_ui/utils/k_images.dart';
-
 import '../../utils/app_colors.dart';
 
 class PlantDetailsScreen extends StatefulWidget {
@@ -206,54 +205,6 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
           color: blackColor,
         ),
       ],
-    );
-  }
-}
-
-class PlantItemDetailsSpecificWidget extends StatelessWidget {
-  const PlantItemDetailsSpecificWidget({
-    super.key,
-    required this.icon,
-    required this.itemName,
-    required this.itemSpecifics,
-  });
-
-  final String icon;
-  final String itemName;
-  final String itemSpecifics;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: context.height * 0.1,
-      child: Column(
-        children: [
-          Image.asset(
-            icon,
-            height: 36,
-            width: 36,
-            color: whiteColor,
-          ),
-          Text(
-            itemName,
-            style: const TextStyle(
-              color: whiteColor,
-              fontSize: 13,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(
-            height: context.height * 0.005,
-          ),
-          Text(
-            itemSpecifics,
-            style: const TextStyle(
-              color: whiteColor,
-              fontSize: 10,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
