@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_app_ui/models/onboarding_model.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
 
-import '../../utils/app_colors.dart';
+import '../../../utils/app_colors.dart';
 
 class OnboardingContentWidget extends StatelessWidget {
   const OnboardingContentWidget({

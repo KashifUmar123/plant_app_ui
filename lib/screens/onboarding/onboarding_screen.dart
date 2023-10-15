@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:plant_app_ui/models/onboarding_model.dart';
-import 'package:plant_app_ui/screens/widgets/onboarding_content_widget.dart';
+import 'package:plant_app_ui/screens/home/home_screen.dart';
+import 'package:plant_app_ui/screens/onboarding/widgets/onboarding_content_widget.dart';
 import 'package:plant_app_ui/utils/app_colors.dart';
 import 'package:plant_app_ui/utils/app_images.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
@@ -100,10 +101,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteColor,
-      body: SizedBox(
+      body: Container(
         height: context.height,
         width: context.width,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              greyColor.withOpacity(.7),
+              greyColor.withOpacity(.1),
+              lightGreyColor.withOpacity(.2),
+            ],
+          ),
+        ),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: context.width * 0.05),
           child: Stack(
@@ -116,9 +125,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   Align(
                     alignment: Alignment.topRight,
                     child: InkWell(
-                      onTap: () {
-                        // TODO: skip
-                      },
+                      onTap: _navigateToHomeScreen,
                       child: const Text(
                         "Skip",
                         style: TextStyle(
@@ -141,7 +148,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 bottom: context.height * 0.05,
                 left: context.width * 0.5 - context.width * 0.05 - 40,
                 child: InkWell(
-                  onTap: onPageChanged,
+                  onTap: _onPageChanged,
                   child: Container(
                     height: 80,
                     width: 80,
@@ -166,8 +173,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
+  void _navigateToHomeScreen() {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (_) => const HomeScreen(),
+      ),
+    );
+  }
+
   // handle the currentIndex
-  void onPageChanged() async {
+  void _onPageChanged() async {
     if (currentIndex < totalPages) {
       showData = false;
       setState(() {});
@@ -177,6 +192,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         showData = true;
         setState(() {});
       });
+    } else {
+      _navigateToHomeScreen();
     }
   }
 }
