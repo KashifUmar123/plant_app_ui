@@ -69,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
   _buildItemsList() {
     return Expanded(
       child: ListView(
+        physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.zero,
         children: [
           Row(

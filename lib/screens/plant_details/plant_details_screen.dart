@@ -146,6 +146,9 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
               ),
             ],
           ),
+          SizedBox(
+            height: context.height * 0.015,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

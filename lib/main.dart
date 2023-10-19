@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:plant_app_ui/screens/onboarding/onboarding_screen.dart';
+import 'package:plant_app_ui/utils/routes/route_names.dart';
+import 'package:plant_app_ui/utils/routes/route_settings.dart';
 
 void main() {
   runApp(const PlantApp());
@@ -12,7 +13,8 @@ class PlantApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnboardingScreen(),
+      onGenerateRoute: AppRoutes.generateRoute,
+      initialRoute: RouteNames.splash,
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_app_ui/models/plant_item_model.dart';
-import 'package:plant_app_ui/screens/plant_details/plant_details_screen.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
+import 'package:plant_app_ui/utils/routes/route_names.dart';
 
 import '../../../utils/app_colors.dart';
 
@@ -77,11 +77,5 @@ class CustomPlantItemWidget extends StatelessWidget {
     );
   }
 
-  _navigateToDetailsScreen(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) => PlantDetailsScreen(plant: plant),
-      ),
-    );
-  }
+  _navigateToDetailsScreen(BuildContext context) => Navigator.pushNamed(context, RouteNames.plantDetails, arguments: plant);
 }

@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:plant_app_ui/data/mock_data.dart';
-import 'package:plant_app_ui/screens/home/home_screen.dart';
 import 'package:plant_app_ui/screens/onboarding/widgets/onboarding_content_widget.dart';
 import 'package:plant_app_ui/utils/app_colors.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
+import 'package:plant_app_ui/utils/routes/route_names.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -96,13 +96,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
-  void _navigateToHomeScreen() {
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (_) => const HomeScreen(),
-      ),
-    );
-  }
+  void _navigateToHomeScreen() => Navigator.pushNamed(context, RouteNames.home);
 
   // handle the currentIndex
   void _onPageChanged() async {
