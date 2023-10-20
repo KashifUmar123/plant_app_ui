@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_app_ui/data/mock_data.dart';
 import 'package:plant_app_ui/screens/home/widgets/custom_plant_item_widget.dart';
 import 'package:plant_app_ui/utils/app_colors.dart';
+import 'package:plant_app_ui/utils/extensions/fonts_extension.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -79,13 +80,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         "Found\n10 Results",
-                        style: TextStyle(
-                          color: blackColor,
-                          fontSize: 30,
+                        style: context.text30400.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -154,11 +153,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     hintText: "Type here",
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.normal,
-                    ),
+                    hintStyle: context.text14400,
                     contentPadding: EdgeInsets.zero,
                     border: InputBorder.none,
                   ),
@@ -196,12 +193,9 @@ class _HomeScreenState extends State<HomeScreen> {
             color: blackColor,
           ),
         ),
-        const Text(
+        Text(
           "Search Products",
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
-          ),
+          style: context.text16400,
         ),
         const CircleAvatar(
           radius: 20,

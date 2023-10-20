@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plant_app_ui/models/plant_item_model.dart';
+import 'package:plant_app_ui/utils/extensions/fonts_extension.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
 import 'package:plant_app_ui/utils/routes/route_names.dart';
 
@@ -45,10 +47,7 @@ class CustomPlantItemWidget extends StatelessWidget {
                 width: double.infinity,
                 child: AutoSizeText(
                   plant.name,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: context.text14400.copyWith(fontSize: 12.sp),
                   maxLines: 1,
                 ),
               ),
@@ -57,8 +56,7 @@ class CustomPlantItemWidget extends StatelessWidget {
                 children: [
                   Text(
                     "\$${plant.price}",
-                    style: const TextStyle(
-                      fontSize: 14,
+                    style: context.text14400.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ),

@@ -16,6 +16,18 @@ class AppTheme {
         fontSize: 30.sp,
         color: blackColor,
       ),
+      bodyLarge: GoogleFonts.poppins(
+        fontSize: 18.sp,
+        color: blackColor,
+      ),
+      bodyMedium: GoogleFonts.poppins(
+        fontSize: 16.sp,
+        color: blackColor,
+      ),
+      bodySmall: GoogleFonts.poppins(
+        fontSize: 10.sp,
+        color: blackColor,
+      ),
     ),
   );
 }

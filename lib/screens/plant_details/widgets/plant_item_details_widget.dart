@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:plant_app_ui/utils/extensions/fonts_extension.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
 
 import '../../../utils/app_colors.dart';
@@ -29,9 +31,9 @@ class PlantItemDetailsSpecificWidget extends StatelessWidget {
           ),
           Text(
             itemName,
-            style: const TextStyle(
+            style: context.text14400.copyWith(
               color: whiteColor,
-              fontSize: 13,
+              fontSize: 13.sp,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -40,9 +42,8 @@ class PlantItemDetailsSpecificWidget extends StatelessWidget {
           ),
           Text(
             itemSpecifics,
-            style: const TextStyle(
+            style: context.text10400.copyWith(
               color: whiteColor,
-              fontSize: 10,
             ),
           ),
         ],

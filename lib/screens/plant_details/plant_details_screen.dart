@@ -1,8 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plant_app_ui/models/plant_item_model.dart';
 import 'package:plant_app_ui/screens/plant_details/widgets/plant_item_details_widget.dart';
+import 'package:plant_app_ui/utils/extensions/fonts_extension.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
 import 'package:plant_app_ui/utils/k_images.dart';
 import '../../utils/app_colors.dart';
@@ -67,8 +69,8 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
                       alignment: Alignment.topLeft,
                       child: Text(
                         widget.plant.name,
-                        style: const TextStyle(
-                          fontSize: 22,
+                        style: context.text14400.copyWith(
+                          fontSize: 22.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -76,8 +78,9 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
                     SizedBox(
                       height: context.height * 0.03,
                     ),
-                    const AutoSizeText(
+                    AutoSizeText(
                       "Plants are the eukaryotes that form the kingdom Plantae; they are predominantly photosynthetic.",
+                      style: context.text14400,
                     ),
                   ],
                 ),
@@ -96,14 +99,17 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
       right: context.width * 0.05,
       child: Transform.rotate(
         angle: 1.5708,
-        child: DotsIndicator(
-          dotsCount: 3,
-          position: 0,
-          decorator: DotsDecorator(
-            color: greyColor,
-            activeColor: darkGreenColor,
-            activeSize: const Size(25.0, 9.0),
-            activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+        child: Transform.scale(
+          scale: .7,
+          child: DotsIndicator(
+            dotsCount: 3,
+            position: 0,
+            decorator: DotsDecorator(
+              color: greyColor,
+              activeColor: darkGreenColor,
+              activeSize: const Size(25.0, 9.0),
+              activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+            ),
           ),
         ),
       ),
@@ -158,11 +164,9 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     "Total Price",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+                    style: context.text16400.copyWith(
                       color: whiteColor,
                     ),
                   ),
@@ -179,19 +183,26 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
                   ),
                 ],
               ),
-              Container(
-                height: context.height * 0.08,
-                width: context.width * 0.5,
-                decoration: BoxDecoration(
-                  color: oliveColor.withOpacity(.2),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: const Center(
-                  child: Text(
-                    "Add to Cart",
-                    style: TextStyle(
-                      color: whiteColor,
-                      fontWeight: FontWeight.bold,
+              Material(
+                borderRadius: BorderRadius.circular(20.r),
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: context.height * 0.08,
+                    width: context.width * 0.5,
+                    decoration: BoxDecoration(
+                      color: oliveColor.withOpacity(.2),
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Add to Cart",
+                        style: context.text14400.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: whiteColor,
+                        ),
+                      ),
                     ),
                   ),
                 ),
