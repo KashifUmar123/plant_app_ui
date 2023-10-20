@@ -1,16 +1,9 @@
-# plant_app_ui
+# A Plant Application UI Challenge
+This is a UI challenge given by a channel called HeyFlutter, I am following for more than a year. This project is done in Flutter and can be run on iOS 17 as well.
+Note: This is just a UI chanllenge, backend funcionality is not included.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## How to run the application:
+* Install Flutter on your device(Flutter is available in Linux, Windows and Mac)
+* Clone the repository [Github](https://github.com/KashifUmar123/plant_app_ui/)
+* Run CMD: flutter pub get in the repository
+* Select any device and run the app.
