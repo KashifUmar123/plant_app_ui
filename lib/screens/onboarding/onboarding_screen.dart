@@ -61,7 +61,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                   ),
                   OnboardingContentWidget(
-                    onboardingModel: onboardingData[currentIndex],
+                    onboardingModel: onboardingData(context)[currentIndex],
                     currentIndex: currentIndex,
                     showData: showData,
                   ),
@@ -96,6 +96,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
+  // home screen navigation
   void _navigateToHomeScreen() => Navigator.pushNamed(context, RouteNames.home);
 
   // handle the currentIndex

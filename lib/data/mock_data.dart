@@ -1,85 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app_ui/models/plant_item_model.dart';
+import 'package:plant_app_ui/utils/extensions/fonts_extension.dart';
 import 'package:plant_app_ui/utils/k_images.dart';
 
 import '../models/onboarding_model.dart';
-import '../utils/app_colors.dart';
 
 // onboarding data
-List<OnboardingModel> onboardingData = [
-  OnboardingModel(
-    title: RichText(
-      text: const TextSpan(
-        children: [
-          TextSpan(
-            text: "Enjoy your \nlife with ",
-            style: TextStyle(
-              color: blackColor,
-              fontSize: 30,
-            ),
+List<OnboardingModel> onboardingData(BuildContext context) => [
+      OnboardingModel(
+        title: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: "Enjoy your \nlife with ",
+                style: context.text30400,
+              ),
+              TextSpan(
+                text: "Plants",
+                style: context.text30400.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ],
           ),
-          TextSpan(
-            text: "Plants",
-            style: TextStyle(
-              color: blackColor,
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
+        ),
+        image: AppImages.p1,
       ),
-    ),
-    image: AppImages.p1,
-  ),
-  OnboardingModel(
-    title: RichText(
-      text: const TextSpan(
-        children: [
-          TextSpan(
-            text: "Enjoy your \nlife with ",
-            style: TextStyle(
-              color: blackColor,
-              fontSize: 30,
-            ),
+      OnboardingModel(
+        title: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: "Enjoy your \nlife with ",
+                style: context.text30400,
+              ),
+              TextSpan(
+                text: "Lucky Jade",
+                style: context.text30400.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ],
           ),
-          TextSpan(
-            text: "Lucky Jade",
-            style: TextStyle(
-              color: blackColor,
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
+        ),
+        image: AppImages.p2,
       ),
-    ),
-    image: AppImages.p2,
-  ),
-  OnboardingModel(
-    title: RichText(
-      text: const TextSpan(
-        children: [
-          TextSpan(
-            text: "Enjoy your \nlife with ",
-            style: TextStyle(
-              color: blackColor,
-              fontSize: 30,
-            ),
+      OnboardingModel(
+        title: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: "Enjoy your \nlife with ",
+                style: context.text30400,
+              ),
+              TextSpan(
+                text: "Cactus",
+                style: context.text30400.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ],
           ),
-          TextSpan(
-            text: "Cactus",
-            style: TextStyle(
-              color: blackColor,
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
+        ),
+        image: AppImages.p3,
       ),
-    ),
-    image: AppImages.p3,
-  ),
-];
+    ];
 
 // plant items
 List<PlantItem> plants = [
