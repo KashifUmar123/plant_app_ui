@@ -105,6 +105,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       setState(() {});
       await Future.delayed(const Duration(milliseconds: 100));
       currentIndex++;
+
       Timer(const Duration(milliseconds: 500), () {
         showData = true;
         setState(() {});

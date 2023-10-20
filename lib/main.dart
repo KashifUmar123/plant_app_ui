@@ -14,7 +14,7 @@ class PlantApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRoutes.generateRoute,
-      initialRoute: RouteNames.splash,
+      initialRoute: RouteNames.onboarding,
     );
   }
 }

@@ -3,7 +3,6 @@ import 'package:plant_app_ui/models/plant_item_model.dart';
 import 'package:plant_app_ui/screens/home/home_screen.dart';
 import 'package:plant_app_ui/screens/onboarding/onboarding_screen.dart';
 import 'package:plant_app_ui/screens/plant_details/plant_details_screen.dart';
-import 'package:plant_app_ui/screens/splash/splash_screen.dart';
 import 'package:plant_app_ui/utils/routes/route_names.dart';
 
 class AppRoutes {
@@ -11,11 +10,6 @@ class AppRoutes {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case RouteNames.splash:
-        return MaterialPageRoute(
-          builder: (context) => const SplashScreen(),
-        );
-
       case RouteNames.onboarding:
         return MaterialPageRoute(
           builder: (context) => const OnboardingScreen(),
@@ -28,7 +22,9 @@ class AppRoutes {
 
       case RouteNames.plantDetails:
         return MaterialPageRoute(
-          builder: (context) => PlantDetailsScreen(plant: settings.arguments as PlantItem),
+          builder: (context) => PlantDetailsScreen(
+            plant: settings.arguments as PlantItem,
+          ),
         );
 
       default:

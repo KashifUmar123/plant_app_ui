@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:plant_app_ui/data/mock_data.dart';
 import 'package:plant_app_ui/models/plant_item_model.dart';
 import 'package:plant_app_ui/screens/plant_details/widgets/plant_item_details_widget.dart';
 import 'package:plant_app_ui/utils/extensions/get_szie_extension.dart';
@@ -47,11 +48,14 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
                       width: double.infinity,
                       child: Stack(
                         children: [
-                          Image.asset(
-                            widget.plant.image,
-                            height: context.height * 0.45,
-                            width: double.infinity,
-                            fit: BoxFit.fitHeight,
+                          Hero(
+                            tag: widget.plant.name,
+                            child: Image.asset(
+                              widget.plant.image,
+                              height: context.height * 0.45,
+                              width: double.infinity,
+                              fit: BoxFit.fitHeight,
+                            ),
                           ),
                           _buildDotsIndicator(context),
                         ],

@@ -108,13 +108,13 @@ List<PlantItem> plants = [
     isLiked: false,
   ),
   PlantItem(
-    name: "Lucky Jade Plant",
+    name: "Lucky Jade Plant 2",
     image: AppImages.p1,
     price: 12.99,
     isLiked: false,
   ),
   PlantItem(
-    name: "Snake Plant",
+    name: "Snake Plant 2",
     image: AppImages.p2,
     price: 19.99,
     isLiked: false,
